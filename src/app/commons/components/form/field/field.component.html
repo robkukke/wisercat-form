@@ -21,7 +21,7 @@
     </div>
 
     <div *ngIf="formGroup.get(fcn)?.errors?.['lessThanOne'] && !formGroup.get(fcn)?.errors?.['required']">
-      {{ label }} can't be less than one.
+      {{ label }} can't be less than 1.
     </div>
 
     <div *ngIf="formGroup.get(fcn)?.errors?.['tooManyDecimals'] && !formGroup.get(fcn)?.errors?.['required']">

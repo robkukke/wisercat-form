@@ -20,7 +20,7 @@ export class MessageFormComponent {
     firstName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZõäöüÕÄÖÜ \-]*')]),
     lastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZõäöüÕÄÖÜ \-]*')]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    workExperience: new FormControl('', [Validators.required, Validators.pattern('[0-9.]*'), CustomValidatorsUtil.forbiddenMonthsValidator(1)]),
+    workExperience: new FormControl('', [Validators.required, CustomValidatorsUtil.forbiddenMonthsValidator(1)]),
   });
 
   onSubmit() {
