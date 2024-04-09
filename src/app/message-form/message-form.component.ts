@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { FieldComponent } from "../commons/components/form/field/field.component";
 import { ButtonComponent } from "../commons/components/button/button.component";
+import { CustomValidatorsUtil } from "../commons/utils/custom-validators/custom-validators.util";
 
 @Component({
   selector: 'wisercat-form-message-form',
@@ -16,13 +17,14 @@ import { ButtonComponent } from "../commons/components/button/button.component";
 })
 export class MessageFormComponent {
   messageForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    workExperience: new FormControl(''),
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    workExperience: new FormControl('', [Validators.required, CustomValidatorsUtil.forbiddenMonthsValidator(1)]),
   });
 
   onSubmit() {
     console.log(this.messageForm.value);
+    console.log(this.messageForm.status);
   }
 }

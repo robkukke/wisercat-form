@@ -20,7 +20,6 @@ export class FieldComponent implements OnInit {
   @Input() id: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
-  @Input() precision: number = 1;
   @Input() type: string = '';
 
   ngOnInit() {
