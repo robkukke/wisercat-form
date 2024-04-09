@@ -2,7 +2,7 @@
   <label for="{{ id }}">{{ label }}</label>
   <br>
   <input class="{{ class }}" formControlName="{{ fcn }}" id="{{ id }}" placeholder="{{ placeholder }}"
-         type="{{ type }}" [attr.min]="type === 'number' ? '0' : null">
+         type="{{ type }}">
   <div *ngIf="formGroup.get(fcn)?.invalid && (formGroup.get(fcn)?.dirty || formGroup.get(fcn)?.touched)" class="alert">
     <div *ngIf="formGroup.get(fcn)?.errors?.['required']">
       {{ label }} is required.
