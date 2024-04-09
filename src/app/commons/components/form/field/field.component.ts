@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective, ReactiveFormsModule } from "@angular/forms";
+import { NgIf } from "@angular/common";
+import { min } from "rxjs";
 
 @Component({
   selector: 'wisercat-form-field',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgIf
   ],
   templateUrl: './field.component.html',
   styleUrl: './field.component.scss'
@@ -25,4 +28,6 @@ export class FieldComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.parentFormGroup.control;
   }
+
+  protected readonly min = min;
 }

@@ -3,7 +3,7 @@ input {
   border: 0.1rem solid #00064B;
   box-sizing: border-box;
   height: 4vh;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   margin-top: 1rem;
   padding: 1rem;
   width: 40vh;
@@ -11,4 +11,10 @@ input {
 
 .half-width {
   width: 19.5vh;
+}
+
+.alert {
+  color: #E53935;
+  margin-top: -4.2rem;
+  margin-bottom: 2.4rem;
 }
