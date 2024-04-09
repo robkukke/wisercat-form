@@ -1,0 +1,17 @@
+.container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.6rem;
+  height: 100vh;
+  justify-content: center;
+}
+
+.half-width {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}

@@ -1,0 +1,43 @@
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="form">
+      <div class="name">
+        <wisercat-form-field [class]="'half-width'"
+                             [fcn]="'firstName'"
+                             [id]="'first-name'"
+                             [label]="'First Name'"
+                             [placeholder]="'Insert first name'"
+                             [type]="'text'">
+        </wisercat-form-field>
+
+        <wisercat-form-field [class]="'half-width'"
+                             [fcn]="'lastName'"
+                             [id]="'last-name'"
+                             [label]="'Last Name'"
+                             [placeholder]="'Insert last name'"
+                             [type]="'text'">
+        </wisercat-form-field>
+      </div>
+
+      <wisercat-form-field [fcn]="'email'"
+                           [id]="'email'"
+                           [label]="'Email Address'"
+                           [placeholder]="'Insert email address'"
+                           [type]="'email'">
+      </wisercat-form-field>
+
+      <wisercat-form-field [fcn]="'workExperience'"
+                           [id]="'work-experience'"
+                           [label]="'Working Experience (in Months)'"
+                           [placeholder]="'Insert working experience in months'"
+                           [precision]="1"
+                           [type]="'number'">
+      </wisercat-form-field>
+
+      <div class="buttons">
+        <wisercat-form-button [class]="'white'" [text]="'Reset'" [type]="'reset'"></wisercat-form-button>
+        <wisercat-form-button [class]="'blue'" [text]="'Submit'" [type]="'submit'"></wisercat-form-button>
+      </div>
+    </div>
+  </div>
+</form>

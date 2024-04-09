@@ -1,0 +1,40 @@
+.container {
+  align-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius: 2.5rem;
+  border: 0.3rem solid #00064B;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  width: 60vh;
+}
+
+.form {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+  width: 40vh;
+}
+
+.name {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.buttons {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
