@@ -1,13 +1,15 @@
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-  <div class="container">
-    <div class="form">
-      <div class="name">
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()" (reset)="onReset()">
+  <div class="message-form-base message-form-container">
+    <wisercat-form-message [text]="text" [type]="type"></wisercat-form-message>
+    <div class="message-form-base form">
+      <div class="message-form-base name">
         <wisercat-form-field [class]="'half-width'"
                              [fcn]="'firstName'"
                              [id]="'first-name'"
                              [label]="'First Name'"
                              [placeholder]="'Insert first name'"
-                             [type]="'text'">
+                             [type]="'text'"
+                             (focusEvent)="clearMessage()">
         </wisercat-form-field>
 
         <wisercat-form-field [class]="'half-width'"
@@ -15,7 +17,8 @@
                              [id]="'last-name'"
                              [label]="'Last Name'"
                              [placeholder]="'Insert last name'"
-                             [type]="'text'">
+                             [type]="'text'"
+                             (focusEvent)="clearMessage()">
         </wisercat-form-field>
       </div>
 
@@ -23,19 +26,21 @@
                            [id]="'email'"
                            [label]="'Email Address'"
                            [placeholder]="'Insert email address'"
-                           [type]="'email'">
+                           [type]="'email'"
+                           (focusEvent)="clearMessage()">
       </wisercat-form-field>
 
       <wisercat-form-field [fcn]="'workExperience'"
                            [id]="'work-experience'"
                            [label]="'Working Experience'"
                            [placeholder]="'Insert working experience in months'"
-                           [type]="'text'">
+                           [type]="'text'"
+                           (focusEvent)="clearMessage()">
       </wisercat-form-field>
 
-      <div class="buttons">
-        <wisercat-form-button [class]="'white'" [text]="'Reset'" [type]="'reset'"></wisercat-form-button>
-        <wisercat-form-button [class]="'blue'" [text]="'Submit'" [type]="'submit'"></wisercat-form-button>
+      <div class="message-form-base buttons">
+        <wisercat-form-button [color]="'white'" [text]="'Reset'" [type]="'reset'"></wisercat-form-button>
+        <wisercat-form-button [color]="'blue'" [text]="'Submit'" [type]="'submit'"></wisercat-form-button>
       </div>
     </div>
   </div>

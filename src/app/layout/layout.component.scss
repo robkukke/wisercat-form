@@ -1,4 +1,4 @@
-.container {
+.layout-container {
   align-content: center;
   align-items: center;
   display: flex;
@@ -9,9 +9,5 @@
 }
 
 .half-width {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  justify-content: center;
   width: 50%;
 }

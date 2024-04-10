@@ -8,20 +8,11 @@ export class CustomValidatorsUtil {
       }
 
       const value = Number(control.value.replace(',', '.'));
-
-      if (isNaN(value)) {
-        return {'notANumber': true};
-      }
-
-      if (value < 1) {
-        return {'lessThanOne': true};
-      }
-
       const decimalPart = (value.toString().split('.')[1] || '').length;
-      if (decimalPart > decimalLimit) {
-        return {'tooManyDecimals': true};
-      }
 
+      if (isNaN(value)) return {'notANumber': true};
+      if (value < 1) return {'lessThanOne': true};
+      if (decimalPart > decimalLimit) return {'tooManyDecimals': true};
       return null;
     };
   }

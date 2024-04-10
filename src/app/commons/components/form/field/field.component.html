@@ -1,31 +1,30 @@
 <ng-container [formGroup]="formGroup">
   <label for="{{ id }}">{{ label }}</label>
   <br>
-  <input class="{{ class }}" formControlName="{{ fcn }}" id="{{ id }}" placeholder="{{ placeholder }}"
-         type="{{ type }}">
+  <input class="input {{ class }}" formControlName="{{ fcn }}" id="{{ id }}" placeholder="{{ placeholder }}"
+         type="{{ type }}" (focus)="emitFocusEvent()">
+
   <div *ngIf="formGroup.get(fcn)?.invalid && (formGroup.get(fcn)?.dirty || formGroup.get(fcn)?.touched)" class="alert">
     <div *ngIf="formGroup.get(fcn)?.errors?.['required']">
       {{ label }} is required.
     </div>
 
-    <div *ngIf="formGroup.get(fcn)?.errors?.['pattern']">
+    <div *ngIf="formGroup.get(fcn)?.errors?.['pattern'] || formGroup.get(fcn)?.errors?.['email']">
       {{ label }} is invalid.
     </div>
 
-    <div *ngIf="formGroup.get(fcn)?.errors?.['email']">
-      {{ label }} is invalid.
-    </div>
+    <ng-container *ngIf="!formGroup.get(fcn)?.errors?.['required']">
+      <div *ngIf="formGroup.get(fcn)?.errors?.['notANumber']">
+        {{ label }} has to be a number.
+      </div>
 
-    <div *ngIf="formGroup.get(fcn)?.errors?.['notANumber'] && !formGroup.get(fcn)?.errors?.['required']">
-      {{ label }} has to be a number.
-    </div>
+      <div *ngIf="formGroup.get(fcn)?.errors?.['lessThanOne']">
+        {{ label }} can't be less than 1.
+      </div>
 
-    <div *ngIf="formGroup.get(fcn)?.errors?.['lessThanOne'] && !formGroup.get(fcn)?.errors?.['required']">
-      {{ label }} can't be less than 1.
-    </div>
-
-    <div *ngIf="formGroup.get(fcn)?.errors?.['tooManyDecimals'] && !formGroup.get(fcn)?.errors?.['required']">
-      {{ label }} can only have one decimal point.
-    </div>
+      <div *ngIf="formGroup.get(fcn)?.errors?.['tooManyDecimals']">
+        {{ label }} can only have 1 decimal point.
+      </div>
+    </ng-container>
   </div>
 </ng-container>

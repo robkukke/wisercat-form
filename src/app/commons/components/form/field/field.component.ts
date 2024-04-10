@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormGroupDirective, ReactiveFormsModule } from "@angular/forms";
 import { NgIf } from "@angular/common";
 
@@ -17,12 +17,17 @@ export class FieldComponent implements OnInit {
   }
 
   formGroup!: FormGroup;
-  @Input() class: string = '';
-  @Input() fcn: string = '';
-  @Input() id: string = '';
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
-  @Input() type: string = '';
+  @Input() class?: string;
+  @Input() fcn!: string;
+  @Input() id?: string;
+  @Input() label?: string;
+  @Input() placeholder?: string;
+  @Input() type?: string;
+  @Output() focusEvent = new EventEmitter<void>();
+
+  emitFocusEvent() {
+    this.focusEvent.emit();
+  }
 
   ngOnInit() {
     this.formGroup = this.parentFormGroup.control;

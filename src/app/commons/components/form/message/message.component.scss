@@ -1,0 +1,23 @@
+.message {
+  align-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  height: 4vh;
+  justify-content: center;
+  margin-top: -4rem;
+  width: 30vh;
+
+  &-error {
+    background-color: #E53935;
+  }
+
+  &-info {
+    background-color: #2196f3;
+  }
+
+  &-success {
+    background-color: #4CAF50;
+  }
+}

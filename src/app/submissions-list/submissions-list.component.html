@@ -1,0 +1,12 @@
+<div *ngIf="submissions().length === 0">Submissions will appear here.</div>
+
+<ng-container *ngFor="let submission of submissions()">
+  <div class="submissions-list-container">
+    <div><img ngSrc="../../assets/icons/person-fill.svg" alt="Person" height="16" width="16"></div>
+    <div class="submission">
+      <div>{{ submission.firstName }} {{ submission.lastName }}</div>
+      <div>{{ submission.email }}</div>
+      <div>{{ submission.workExperience }} months of working experience</div>
+    </div>
+  </div>
+</ng-container>

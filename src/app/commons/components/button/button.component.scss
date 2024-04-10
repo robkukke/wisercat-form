@@ -1,16 +1,16 @@
-button {
+.button {
   border: 0.1rem solid #00064B;
   border-radius: 1rem;
   cursor: pointer;
   height: 4vh;
   width: 19.5vh;
-}
 
-.blue {
-  background-color: #00064B;
-  color: white;
-}
+  &-blue {
+    background-color: #00064B;
+    color: white;
+  }
 
-.white {
-  background-color: #FCFCFF;
+  &-white {
+    background-color: #FCFCFF;
+  }
 }
